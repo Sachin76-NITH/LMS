@@ -31,8 +31,8 @@ app.use(bodyParser.urlencoded());
 app.use(express.json())
 app.use(cookieParser())
 
-app.use("/",authRoutes)
-app.use("/",bookRoutes)
+app.use(authRoutes)
+app.use(bookRoutes)
 
 
 
