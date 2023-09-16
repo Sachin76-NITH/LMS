@@ -13,7 +13,7 @@ function Viewbook() {
 
   useEffect(() => {
     // Fetch data from your API endpoint using Axios
-    axios.get("http://localhost:3002/view") // Replace with your actual API endpoint
+    axios.get("https://sachin2276.onrender.com/view") // Replace with your actual API endpoint
       .then((response) => {
         setBooks(response.data);
       })

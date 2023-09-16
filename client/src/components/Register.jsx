@@ -29,7 +29,7 @@ function Register() {
         e.preventDefault();
 
         try{
-          const {data}=  await axios.post("http://localhost:3002/Register",{
+          const {data}=  await axios.post("https://sachin2276.onrender.com/Register",{
                 email,password
             })
 
