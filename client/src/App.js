@@ -37,7 +37,7 @@ function App() {
       <Route path="/User" element={<User />} />
       <Route path="/User" element={<User />} />
       <Route path="/view" element={<Viewbook />} />
-      <Route path="/add-books" element={<Addbook />} />
+      <Route path="/add-book" element={<Addbook />} />
       
     </Routes>
     <Footer/>

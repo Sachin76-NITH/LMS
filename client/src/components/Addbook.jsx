@@ -5,15 +5,16 @@ import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { UseAuth } from './UseAuth';
+import { getGlobalEmail } from '../Global/global';
+
 
 function Addbook() {
   const { isAuthenticated } = UseAuth();
   
   const navigate = useNavigate();
-  const generateError = (err) =>
-    toast.error(err, {
-        position:"bottom-right",
-    });
+  // const generateError=()=>  toast('Same Book', {
+  //   position: 'bottom-right',
+  // });
 
   const [formData, setFormData] = useState({
     title: '',
@@ -26,6 +27,7 @@ function Addbook() {
     setFormData({
       ...formData,
       [name]: value,
+      email: getGlobalEmail()
     });
   };
 
@@ -34,7 +36,7 @@ function Addbook() {
 
     try {
       // Send a POST request to your API to add the book
-      const response = await axios.post('https://sachin2276.onrender.com/add-book', formData);
+      const response = await axios.post('http://localhost:3002/add-book', formData);
 
       // Handle success, clear the form, or redirect as needed
       console.log('Book added successfully:', response.data);
@@ -44,12 +46,19 @@ function Addbook() {
         ISBN: '',
       });
       if (response.data.error) {
-        generateError(response.data.error);
+        // generateError(response.data.error);
       } else {
         navigate('/User');
       }
     }catch (error) {
+       console.log("same book")
           console.error('Error adding book:', error);
+          // generateError();
+           toast("SAME BOOK")
+         
+        //   toast.error(error, {
+        //     position:"bottom-right",
+        // });
     }
   };
   if (!isAuthenticated) {
@@ -98,6 +107,7 @@ function Addbook() {
           Add Book
         </button>
       </form>
+      <ToastContainer position="bottom-right" />
     </div>
   );
 }}

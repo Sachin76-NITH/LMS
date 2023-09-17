@@ -29,7 +29,7 @@ function User  (props)  {
               </p>
               <div className="buttons-container">
                 <button className="view-button" onClick={() => navigate('/view')}>View Books</button>
-                <button className="add-book-button" onClick={() => navigate('/add-books')}>Add Book</button>
+                <button className="add-book-button" onClick={() => navigate('/add-book')}>Add Book</button>
               </div>
           </div>
           

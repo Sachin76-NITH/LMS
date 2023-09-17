@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { useCookies } from "react-cookie";
 import '../styles/login.scss'
+import { setGlobalEmail } from '../Global/global';
 
 function Login() { 
   const [cookies] = useCookies([]);
@@ -29,7 +30,7 @@ function Login() {
         e.preventDefault();
 
         try{
-          const {data}=  await axios.post("https://sachin2276.onrender.com/Login",{
+          const {data}=  await axios.post("http://localhost:3002/Login",{
                 email,password
             })
             if(data){
@@ -42,6 +43,8 @@ function Login() {
                     localStorage.setItem('token',data.token);
                     
                     navigate("/User",{ state: { email } })
+                    //save email
+                    setGlobalEmail(email);
               }
             }
         }

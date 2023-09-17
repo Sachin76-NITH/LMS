@@ -8,12 +8,15 @@ expiresIn:maxAge
     })}
 
     const handleErrors=(err)=>{
-        let errors={email:"",password:""};
+        let errors={email:"",password:"",book:""};
 
         if (err.message === "incorrect email") {
             errors.email = "That email is not registered";
           }
         
+          if (err.message === "incorrect password") {
+            errors.password = "That password is incorrect";
+          }
           if (err.message === "incorrect password") {
             errors.password = "That password is incorrect";
           }

@@ -1,5 +1,5 @@
 const Book = require('../models/book');
-
+const User=require("../models/UserModel")
 
 
 
@@ -7,7 +7,7 @@ const Book = require('../models/book');
 exports.addBook = async (req, res) => {
   try {
     // Extract book data from the request body
-    const { title, author, ISBN } = req.body;
+    const { title, author, ISBN ,email} = req.body;
 
     // Check if a book with the same ISBN already exists
     const existingBook = await Book.findOne({ ISBN });
@@ -17,7 +17,7 @@ exports.addBook = async (req, res) => {
     }
 
     // Create a new book instance
-    const newBook = new Book({ title, author, ISBN });
+    const newBook = new Book({ title, author, ISBN,email });
     console.log(newBook);
 
     // Save the new book to the database
@@ -61,6 +61,7 @@ exports.updateBook = async (req, res) => {
 // Delete a book
 exports.deleteBook = async (req, res) => {
   const { _id } = req.params;
+  
 
   try {
     await Book.findByIdAndRemove(_id);
