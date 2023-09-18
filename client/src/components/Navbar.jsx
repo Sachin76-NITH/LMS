@@ -68,7 +68,7 @@ function Navbar() {
 
   return (
     <div className="navbar">
-   <nav className="navbar">
+   <nav className="navbar nav_bar">
   <div className="container">
 
     <div className="navbar-header">
