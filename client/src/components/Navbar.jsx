@@ -116,7 +116,7 @@ function Navbar() {
         <li><Link to ={"/Login"}>Login</Link></li>
         <li><Link to ={"/Register"}>Register</Link></li>
         <li><Link to={"/User"}>LMS</Link></li>
-        <li><Link to ={"/Blog"}>Blog</Link></li>
+        <li><Link to ={"/Blog"}>Team MAGMA</Link></li>
         <li><Link to ={"/Logout"}>Logout</Link></li>
       </ul>
     </div>
