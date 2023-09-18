@@ -14,7 +14,7 @@ function Viewbook() {
 
   useEffect(() => {
     // Fetch data from your API endpoint using Axios
-    axios.get("https://lms-1ldg.vercel.app/view") // Replace with your actual API endpoint
+    axios.get("https://lms-q7xj.vercel.app/view") // Replace with your actual API endpoint
       .then((response) => {
         setBooks(response.data);
       })

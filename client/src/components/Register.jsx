@@ -29,7 +29,7 @@ function Register() {
         e.preventDefault();
 
         try{
-          const {data}=  await axios.post("https://lms-1ldg.vercel.app/Register",{
+          const {data}=  await axios.post("https://lms-q7xj.vercel.app/Register",{
                 email,password
             })
 

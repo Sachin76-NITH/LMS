@@ -30,7 +30,7 @@ function Login() {
         e.preventDefault();
 
         try{
-          const {data}=  await axios.post("https://lms-1ldg.vercel.app/Login",{
+          const {data}=  await axios.post("https://lms-q7xj.vercel.app/Login",{
                 email,password
             })
             if(data){

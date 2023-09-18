@@ -36,7 +36,7 @@ function Addbook() {
 
     try {
       // Send a POST request to your API to add the book
-      const response = await axios.post('https://lms-1ldg.vercel.app/add-book', formData);
+      const response = await axios.post('https://lms-q7xj.vercel.app/add-book', formData);
 
       // Handle success, clear the form, or redirect as needed
       console.log('Book added successfully:', response.data);
